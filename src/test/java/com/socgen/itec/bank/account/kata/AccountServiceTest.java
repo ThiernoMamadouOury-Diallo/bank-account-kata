@@ -50,7 +50,6 @@ public class AccountServiceTest {
 
         Operations actualOPerations = accountService.getOperations("User1");
 
-
         //Then
         assert actualOPerations.getOperations().equals(expectedOperations.getOperations());
         assert actualOPerations.toString().equals(expectedOperations.toString());

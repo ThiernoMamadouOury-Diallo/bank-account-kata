@@ -1,7 +1,10 @@
 package com.socgen.itec.bank.account.kata.service;
 
+import com.socgen.itec.bank.account.kata.model.Operation;
 import com.socgen.itec.bank.account.kata.model.Operations;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class AccountService {
@@ -15,6 +18,10 @@ public class AccountService {
     }
     public Operations getOperations(String userId){
 
+        List<Operation> operationList = accountManagementService.getAllOperations();
+        Operations operations = new Operations();
+        operations.setOperations(operationList);
+        operations.setUserId(userId);
 
         return operations;
     }

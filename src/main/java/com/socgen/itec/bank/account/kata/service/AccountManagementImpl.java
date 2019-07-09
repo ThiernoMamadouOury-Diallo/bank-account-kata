@@ -1,5 +1,6 @@
 package com.socgen.itec.bank.account.kata.service;
 
+import com.socgen.itec.bank.account.kata.constants.OperationsData;
 import com.socgen.itec.bank.account.kata.model.Operation;
 import org.springframework.stereotype.Service;
 
@@ -16,7 +17,9 @@ public class AccountManagementImpl implements AccountManagementService{
     @Override
     public List<Operation> getAllOperations(){
 
-
-        return new ArrayList<>();
+        List<Operation> operationList = OperationsData.getOperations();
+        if(operationList.isEmpty())
+            return new ArrayList<>();
+        return operationList;
     }
 }
