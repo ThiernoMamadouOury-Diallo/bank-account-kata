@@ -16,5 +16,6 @@ import java.util.List;
 public class Operations {
     private static final long serialVersionUID = 1L;
 
+    private String userId;
     private List<Operation> operations;
 }
