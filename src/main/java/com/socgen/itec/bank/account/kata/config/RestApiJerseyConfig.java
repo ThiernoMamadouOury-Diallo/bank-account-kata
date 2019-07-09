@@ -1,6 +1,6 @@
 package com.socgen.itec.bank.account.kata.config;
 
-import com.socgen.itec.bank.account.kata.controller.AccountManagement;
+import com.socgen.itec.bank.account.kata.unit.controller.AccountManagement;
 import org.glassfish.jersey.server.ResourceConfig;
 import org.glassfish.jersey.server.ServerProperties;
 import org.springframework.context.annotation.Configuration;

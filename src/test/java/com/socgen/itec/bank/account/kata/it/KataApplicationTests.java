@@ -1,4 +1,4 @@
-package com.socgen.itec.bank.account.kata;
+package com.socgen.itec.bank.account.kata.it;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

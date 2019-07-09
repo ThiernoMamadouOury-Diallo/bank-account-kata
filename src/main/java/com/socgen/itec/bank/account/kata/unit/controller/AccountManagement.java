@@ -1,7 +1,7 @@
-package com.socgen.itec.bank.account.kata.controller;
+package com.socgen.itec.bank.account.kata.unit.controller;
 
 import com.socgen.itec.bank.account.kata.model.Operations;
-import com.socgen.itec.bank.account.kata.service.AccountService;
+import com.socgen.itec.bank.account.kata.unit.service.AccountService;
 import org.springframework.stereotype.Component;
 
 import javax.ws.rs.GET;
