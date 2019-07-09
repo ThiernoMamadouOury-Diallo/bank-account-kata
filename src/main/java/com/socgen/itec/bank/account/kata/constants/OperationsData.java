@@ -1,7 +1,6 @@
 package com.socgen.itec.bank.account.kata.constants;
 
 import com.socgen.itec.bank.account.kata.model.Operation;
-import com.socgen.itec.bank.account.kata.model.Operations;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -40,13 +39,11 @@ public enum OperationsData {
         this.balance = balance;
 
     }
-    public static Operations getOperations(){
-        Operations operations = new Operations();
+    public static List<Operation> getOperations(){
         List<Operation> operationList = new ArrayList<>();
         Arrays.asList(OperationsData.values()).forEach(e->operationList.add(initOperation(e.operation, e.date, e.amount, e.balance)));
-        operations.setOperations(operationList);
-        operations.setUserId("User1");
-        return operations;
+
+        return operationList;
     }
     public static Operation initOperation(String oper, String date, String amount, String balance){
         Operation operation = new Operation();
