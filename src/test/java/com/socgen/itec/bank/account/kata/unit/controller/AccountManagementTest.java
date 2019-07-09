@@ -1,8 +1,9 @@
 package com.socgen.itec.bank.account.kata.unit.controller;
 
+import com.socgen.itec.bank.account.kata.controller.AccountManagement;
 import com.socgen.itec.bank.account.kata.model.Operation;
 import com.socgen.itec.bank.account.kata.model.Operations;
-import com.socgen.itec.bank.account.kata.unit.service.AccountService;
+import com.socgen.itec.bank.account.kata.service.AccountService;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
