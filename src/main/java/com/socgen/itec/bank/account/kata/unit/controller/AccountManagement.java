@@ -35,7 +35,7 @@ public class AccountManagement {
     }
 
     @GET
-    @Path("/{idUser}"+REST_API_OPERATIONS_PATH)
+    @Path(REST_API_OPERATIONS_PATH)
     @Produces(APPLICATION_JSON)
     public Response getAllOperationsForUser(@PathParam("idUser") String idUser){
 
