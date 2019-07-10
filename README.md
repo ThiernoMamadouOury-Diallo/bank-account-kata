@@ -24,3 +24,7 @@ Try API Endpoint by using POSTMAN software
 ##### POST : http://localhost:8080/api/1/deposit/50
 
 
+#### WITHDRAWAL SERVICE
+##### POST : http://localhost:8080/api/withdrawal/10
+
+
