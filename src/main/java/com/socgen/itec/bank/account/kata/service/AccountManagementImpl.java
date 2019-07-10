@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -25,7 +25,7 @@ public class AccountManagementImpl implements AccountManagementService{
     public List<Operation> getAllOperations(){
 
         if(operationList.isEmpty())
-            return new ArrayList<>();
+            return Collections.emptyList();
         return operationList;
     }
 
