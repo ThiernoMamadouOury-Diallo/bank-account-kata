@@ -1,4 +1,4 @@
-package com.socgen.itec.bank.account.kata.unit.service;
+package com.socgen.itec.bank.account.kata.service;
 
 import com.socgen.itec.bank.account.kata.model.Operation;
 
