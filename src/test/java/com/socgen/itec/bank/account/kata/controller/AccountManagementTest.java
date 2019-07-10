@@ -70,6 +70,7 @@ public class AccountManagementTest {
         //Given
 
         //When
+        when(accountService.withdrawMoney(any())).thenReturn(response);
         when(response.getStatus()).thenReturn(200);
 
         Response response = accountManagement.withdrawMoney("40");
