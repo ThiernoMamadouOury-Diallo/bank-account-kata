@@ -7,9 +7,9 @@ import java.util.Arrays;
 import java.util.List;
 
 public enum OperationsData {
-    OPERATIONS_DATA1("Retrait1", "09/08/2019", "20", "50"),
-    OPERATIONS_DATA2("Depot2","10/08/2019", "20", "70"),
-    OPERATIONS_DATA3("Virement3", "11/08/2019", "20", "50");
+    OPERATIONS_DATA1("Retrait", "09/08/2019", "20", "50"),
+    OPERATIONS_DATA2("Depot","10/08/2019", "20", "70"),
+    OPERATIONS_DATA3("Virement", "11/08/2019", "20", "50");
 
     private final String operation;
     private final String date;

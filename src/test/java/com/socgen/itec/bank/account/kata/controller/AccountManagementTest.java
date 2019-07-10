@@ -1,6 +1,5 @@
-package com.socgen.itec.bank.account.kata.unit.controller;
+package com.socgen.itec.bank.account.kata.controller;
 
-import com.socgen.itec.bank.account.kata.controller.AccountManagement;
 import com.socgen.itec.bank.account.kata.model.Operation;
 import com.socgen.itec.bank.account.kata.model.Operations;
 import com.socgen.itec.bank.account.kata.service.AccountService;
