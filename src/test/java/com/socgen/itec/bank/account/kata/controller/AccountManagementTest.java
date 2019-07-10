@@ -3,10 +3,10 @@ package com.socgen.itec.bank.account.kata.controller;
 import com.socgen.itec.bank.account.kata.model.Operation;
 import com.socgen.itec.bank.account.kata.model.Operations;
 import com.socgen.itec.bank.account.kata.service.AccountService;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.powermock.api.mockito.PowerMockito;
 import org.powermock.core.classloader.annotations.PowerMockIgnore;
 import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
@@ -16,6 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.mockito.ArgumentMatchers.any;
+import static org.powermock.api.mockito.PowerMockito.mock;
 import static org.powermock.api.mockito.PowerMockito.when;
 
 @RunWith(PowerMockRunner.class)
@@ -25,9 +26,11 @@ public class AccountManagementTest {
 
     private AccountManagement accountManagement;
     private AccountService accountService;
+
+    private Response response = mock(Response.class);
     @Before
     public void setUp(){
-        accountService = PowerMockito.mock(AccountService.class);
+        accountService = mock(AccountService.class);
         accountManagement = new AccountManagement(accountService);
     }
 
@@ -59,6 +62,21 @@ public class AccountManagementTest {
         assert actualOperations.getOperations().equals(expectedOperations.getOperations());
         assert actualOperations.toString().equals(expectedOperations.toString());
 
+
+    }
+
+    @Test
+    public void withdrawMoney(){
+        //Given
+
+        //When
+        when(accountService.withdrawMoney(any())).thenReturn(response);
+        when(response.getStatus()).thenReturn(200);
+
+        Response response = accountManagement.withdrawMoney("40");
+
+        //Then
+        Assert.assertEquals(200, response.getStatus());
 
     }
 }

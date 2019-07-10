@@ -7,5 +7,6 @@ import java.util.List;
 public interface AccountManagementService {
     List<Operation> getAllOperations();
     void saveMoney(String userId, String amount);
+    void withdrawMoney(String amount);
 
 }
