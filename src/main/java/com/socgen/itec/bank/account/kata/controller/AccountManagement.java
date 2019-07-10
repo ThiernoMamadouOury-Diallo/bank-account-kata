@@ -8,8 +8,7 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import static com.socgen.itec.bank.account.kata.constants.PathConstants.REST_API_DEPOSIT_PATH;
-import static com.socgen.itec.bank.account.kata.constants.PathConstants.REST_API_OPERATIONS_PATH;
+import static com.socgen.itec.bank.account.kata.constants.PathConstants.*;
 
 /**
  * All endpoints expected for user account management
@@ -50,6 +49,16 @@ public class AccountManagement {
                                          @PathParam("amount") String amount){
 
         Response response = accountService.saveMoney(idUser, amount);
+
+        return response;
+    }
+
+    @POST
+    @Path(REST_API_WITHDRAWAL_PATH)
+    @Produces(APPLICATION_JSON)
+    public Response withdrawMoney(@PathParam("amount") String amount){
+
+        Response response = null;
 
         return response;
     }
