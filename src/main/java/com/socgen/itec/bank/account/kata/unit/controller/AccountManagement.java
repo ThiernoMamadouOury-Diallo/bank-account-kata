@@ -4,13 +4,11 @@ import com.socgen.itec.bank.account.kata.model.Operations;
 import com.socgen.itec.bank.account.kata.unit.service.AccountService;
 import org.springframework.stereotype.Component;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+import static com.socgen.itec.bank.account.kata.constants.PathConstants.REST_API_DEPOSIT_PATH;
 import static com.socgen.itec.bank.account.kata.constants.PathConstants.REST_API_OPERATIONS_PATH;
 
 /**
@@ -44,5 +42,15 @@ public class AccountManagement {
             return Response.serverError().build();
         }
         return Response.ok(operations).build();
+    }
+    @POST
+    @Path(REST_API_DEPOSIT_PATH)
+    @Produces(APPLICATION_JSON)
+    public Response saveMoneyForUser(@PathParam("idUser") String idUser,
+                                         @PathParam("amount") String amount){
+
+        Response response = accountService.saveMoney(idUser, amount);
+
+        return response;
     }
 }
