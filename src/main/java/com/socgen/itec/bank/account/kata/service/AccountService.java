@@ -43,4 +43,17 @@ public class AccountService {
 
     }
 
+    public Response withdrawMoney(String amount){
+        try {
+            accountManagementService.withdrawMoney(amount);
+            LOGGER.info("Success retrait");
+            return Response.ok().build();
+        }catch (Exception e){
+            e.printStackTrace();
+            LOGGER.error("Error service");
+            return Response.serverError().build();
+        }
+
+    }
+
 }

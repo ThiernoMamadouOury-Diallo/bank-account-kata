@@ -29,7 +29,7 @@ public class AccountManagementImpl implements AccountManagementService{
     public List<Operation> getAllOperations(){
 
         if(operationList.isEmpty()) {
-            LOGGER.error("error");
+            LOGGER.error("liste vide");
             return Collections.emptyList();
         }
         LOGGER.info("success");
@@ -50,7 +50,25 @@ public class AccountManagementImpl implements AccountManagementService{
         userBalance.setBalance(solde);
         operation.setBalance(solde.toString());
 
-        LOGGER.info("Nouvelle opeation");
+        LOGGER.info("Nouvelle opeation de depot");
+        operationList.add(operation);
+    }
+
+    @Override
+    public void withdrawMoney(String amount){
+
+        BigDecimal solde;
+
+        Operation operation =new Operation();
+        operation.setOperation("Depot");
+        operation.setDate(LocalDate.now().toString());
+        operation.setAmount(amount);
+
+        solde = userBalance.getBalance().subtract(new BigDecimal(amount));
+        userBalance.setBalance(solde);
+        operation.setBalance(solde.toString());
+
+        LOGGER.info("Nouvelle opeation de retrait");
         operationList.add(operation);
     }
 }

@@ -58,7 +58,7 @@ public class AccountManagement {
     @Produces(APPLICATION_JSON)
     public Response withdrawMoney(@PathParam("amount") String amount){
 
-        Response response = null;
+        Response response = accountService.withdrawMoney(amount);
 
         return response;
     }
